@@ -2,7 +2,7 @@ import { QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
 // can make the base url private in the env file but since the url is public, I did not put the url in env file. 
-const BASEURL = "https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==";
+const BASEURL = "";
 
 // use react query for efficient caching of api calls.
 export const queryClient = new QueryClient({
