@@ -9,12 +9,15 @@ const Upcoming = () => {
   const [page, setPage] = useState(1);
   const [events, setEvents] = useState(response2.data.events);
   const [isloading, setIsLoading] = useState(false);
+  
+  //use Effect to keep track of change in the page number
   useEffect(() => {
     if (page != 1) {
       fetchEvents(page);
     }
   }, [page]);
 
+  //used to fetch the next page from the api, called when the page number is changed in the api
   const fetchEvents = async () => {
     setIsLoading(true);
     const fetchNext = upcomingLoader(page);
@@ -36,7 +39,7 @@ const Upcoming = () => {
           />
         );
       })}
-      {isloading && <span>Loading ...</span>}
+      {isloading && <span className="loading">Loading ...</span>}
     </div>
   );
 };

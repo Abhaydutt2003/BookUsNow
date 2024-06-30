@@ -30,8 +30,8 @@
         padding-right: 20px;
       }
       @include md {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 35px;
+        padding-right: 35px;
       }
       padding-left: 90px;
       padding-right: 90px;
@@ -55,12 +55,12 @@
       }
       .wrapper {
         @include sm {
-          padding-left: 25px;
-          padding-right: 25px;
+          padding-left: 18px;
+          padding-right: 18px;
         }
         @include md {
-          padding-left: 45px;
-          padding-right: 45px;
+          padding-left: 40px;
+          padding-right: 40px;
         }
         padding-left: 100px;
         padding-right: 100px;

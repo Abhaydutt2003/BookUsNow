@@ -13,6 +13,7 @@ const LOCATION = "Mumbai, India";
 const NavBar = () => {
   return (
     <nav className="navbar">
+      
       {/* mobile layout */}
       <div className="top">
         <div className="heading">

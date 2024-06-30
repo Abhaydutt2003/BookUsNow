@@ -1,7 +1,8 @@
 import { QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
-// can make the base url private in the env file but since the url is public, I did not put the url in env file. 
+//use the env file for the BASEURL, or simply put the url here 
+//use only the base of the url (...HeyQ==  till here)
 const BASEURL = "";
 
 // use react query for efficient caching of api calls.
@@ -13,7 +14,7 @@ export const queryClient = new QueryClient({
     }
 });
 
-// loader, get all the home page data before loading the hero component
+// loader, get all the home page data before loading the hero component [upcoming events page 1  and recommended shows ]
 export const HeroLoader = (type) => async () => {
     const response = await queryClient.ensureQueryData({
       queryKey: ['recommendedShows'],
@@ -30,7 +31,8 @@ export const HeroLoader = (type) => async () => {
     return {response ,response2};
 }
 
-
+//this loader is used when the user scrolls down and we need to fetch the upcoming events, since using react router, the 
+//requests will be cached (can be seen in the devTools)
 export const upcomingLoader = (page)=>async()=>{
     const response = await queryClient.ensureQueryData({
         queryKey:[`upcomingevents-${page}`],

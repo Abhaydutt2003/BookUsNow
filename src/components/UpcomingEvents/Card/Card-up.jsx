@@ -9,6 +9,8 @@ const Card = ({ event, last, page, setPage }) => {
   const imgUrl = getRandomImage();
   const elementRef = useRef(null);
 
+  //this intersection observer serves 2 things, lazy load images, and also if the user has scrolled through the 
+  //entire cards, then the page will be changed , which will make sure to fetch the next page (Check the Upcoming component)
   useEffect(() => {
     const element = elementRef.current;
     if (!element) return;
@@ -17,10 +19,11 @@ const Card = ({ event, last, page, setPage }) => {
       (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            if (page <= 4 && last) {
+            //the element is visible
+            
+            if (page <= 4 && last) {//take care of the api page limit
               setPage(page + 1);
             }
-            console.log("visible");
             const ele = entry.target;
             const src = ele.getAttribute("data-background-src");
             ele.style.backgroundImage = `url(${src})`;

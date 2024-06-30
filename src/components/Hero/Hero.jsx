@@ -2,6 +2,8 @@ import HorizontalScroll from "../HorizontalScroll/HorizontalScroll";
 import Upcoming from "../UpcomingEvents/Upcoming";
 import "./style.scss";
 import { FaArrowRight } from "react-icons/fa";
+
+//The major visible component in the route.
 const Hero = () => {
   return (
     <>
